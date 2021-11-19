@@ -1,4 +1,4 @@
-package edu.tecsup.tienda.servlets;
+package pe.edu.tecsup.tienda.servlets;
 
 
 import java.io.IOException;
