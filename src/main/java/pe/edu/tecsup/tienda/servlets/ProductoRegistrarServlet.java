@@ -1,6 +1,5 @@
 package pe.edu.tecsup.tienda.servlets;
 
-
 import java.io.IOException;
 import java.util.List;
 
@@ -68,6 +67,8 @@ public class ProductoRegistrarServlet extends HttpServlet {
 			log.info(producto);
 			
 			productoService.registrar(producto);
+			
+			request.getSession().setAttribute("success", "Registro guardado satisfactoriamente");
 			
 			response.sendRedirect(request.getContextPath() + "/ProductoListarServlet");
 	        

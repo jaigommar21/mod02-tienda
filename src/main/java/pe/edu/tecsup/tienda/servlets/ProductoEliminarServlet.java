@@ -15,7 +15,7 @@ import pe.edu.tecsup.tienda.services.ProductoService;
 @WebServlet("/ProductoEliminarServlet")
 public class ProductoEliminarServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L; 
     
 	private static final Logger log = Logger.getLogger(ProductoListarServlet.class);
 	
@@ -32,7 +32,10 @@ public class ProductoEliminarServlet extends HttpServlet {
 			Integer id = Integer.parseInt(request.getParameter("id"));
 			
 			productoService.eliminar(id);
+
+			request.getSession().setAttribute("success", "Registro eliminado satisfactoriamente");
 			
+
 			response.sendRedirect(request.getContextPath() + "/ProductoListarServlet");
 	        
 		} catch (Exception e) {
