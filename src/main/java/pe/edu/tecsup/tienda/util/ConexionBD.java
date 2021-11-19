@@ -12,8 +12,8 @@ public class ConexionBD {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			//con = DriverManager.getConnection("jdbc:mysql://localhost/tienda?useSSL=false", "root", "");
-			con = DriverManager.getConnection("jdbc:mysql://192.168.64.2/tienda?useSSL=false", "tecsup", "tecsup");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/tienda?useSSL=false", "root", "");
+			//con = DriverManager.getConnection("jdbc:mysql://192.168.64.2/tienda?useSSL=false", "tecsup", "tecsup");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
