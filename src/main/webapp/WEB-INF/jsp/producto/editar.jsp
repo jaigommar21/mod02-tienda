@@ -47,13 +47,13 @@
 	                        <div class="input-group-prepend">
 	                            <div class="input-group-text">S/</div>
 	                        </div>
-	                        <input type="number" name="precio" id="precio" class="form-control" min="0" step="0.01" required>
+	                        <input type="number" name="precio" id="precio" class="form-control" min="0" step="0.01">
 	                    </div>
 	                </div>
 	                
 	                <div class="form-group">
 	                    <label for="stock">Stock</label>
-	                    <input type="number" name="stock" id="stock" class="form-control" min="0" required>
+	                    <input type="number" name="stock" id="stock" class="form-control" min="0">
 	                </div>
 	
 	                <div class="form-group">

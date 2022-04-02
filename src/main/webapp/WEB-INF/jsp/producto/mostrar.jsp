@@ -3,8 +3,11 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 	<%@include file="/WEB-INF/jsp/includes/head.jsp" %>
 	
@@ -42,9 +45,9 @@
 	                    <label for="categorias_id">Categoría</label>
 	                    <select name="categorias_id" id="categorias_id" class="form-control" required>
 	                        <option value="" selected disabled>Seleccione un valor</option>
-	                        <% for(Categoria categoria : categorias) { %>
-	                        <option value="<%=categoria.getId()%>"><%=categoria.getNombre()%></option>
-	                        <% } %>
+	                        <c:forEach items="${categorias}" var="categoria">
+	                        	<option value="<c:out value="${categoria.id}"/>"><c:out value="${categoria.nombre}"/></option>
+	                        </c:forEach>
 	                    </select>
 	                </div>
 	                
@@ -54,13 +57,13 @@
 	                        <div class="input-group-prepend">
 	                            <div class="input-group-text">S/</div>
 	                        </div>
-	                        <input type="number" name="precio" id="precio" class="form-control" min="0" step="0.01">
+	                        <input type="number" name="precio" id="precio" class="form-control" min="0" step="0.01" required>
 	                    </div>
 	                </div>
 	                
 	                <div class="form-group">
 	                    <label for="stock">Stock</label>
-	                    <input type="number" name="stock" id="stock" class="form-control" min="0">
+	                    <input type="number" name="stock" id="stock" class="form-control" min="0" required>
 	                </div>
 	
 	                <div class="form-group">
