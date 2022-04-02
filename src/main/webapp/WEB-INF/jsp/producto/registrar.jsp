@@ -2,6 +2,9 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>      
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +21,8 @@
             
 	    <div class="display-4 mb-3">Mantenimiento de Productos</div>
 	    
-	    <form action="<%=request.getContextPath()%>/ProductoRegistrarServlet" method="post">
+	    <form action="<%=request.getContextPath()%>/ProductoRegistrarServlet" 
+	    	  method="post" enctype="multipart/form-data">
 	        
 	        <div class="card">
 	            <div class="card-header">
@@ -35,9 +39,9 @@
 	                    <label for="categorias_id">Categoría</label>
 	                    <select name="categorias_id" id="categorias_id" class="form-control" required>
 	                        <option value="" selected disabled>Seleccione un valor</option>
-	                        <% for(Categoria categoria : categorias) { %>
-	                        <option value="<%=categoria.getId()%>"><%=categoria.getNombre()%></option>
-	                        <% } %>
+	                       	<c:forEach items="${categorias}" var="categoria">
+	                        	<option value="<c:out value="${categoria.id}"/>"><c:out value="${categoria.nombre}"/></option>
+	                        </c:forEach>
 	                    </select>
 	                </div>
 	                
