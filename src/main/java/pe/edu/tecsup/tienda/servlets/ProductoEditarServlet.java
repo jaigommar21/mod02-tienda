@@ -16,24 +16,24 @@ import pe.edu.tecsup.tienda.entities.Producto;
 import pe.edu.tecsup.tienda.services.CategoriaService;
 import pe.edu.tecsup.tienda.services.ProductoService;
 
-@WebServlet("/ProductoMostrarServlet")
-public class ProductoMostrarServlet extends HttpServlet {
+@WebServlet("/ProductoEditarServlet")
+public class ProductoEditarServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
     
-	private static final Logger log = Logger.getLogger(ProductoMostrarServlet.class);
+	private static final Logger log = Logger.getLogger(ProductoEditarServlet.class);
 	
 	private CategoriaService categoriaService;
 	
 	private ProductoService productoService;
 	
-	public ProductoMostrarServlet() {
+	public ProductoEditarServlet() {
 		this.productoService = new ProductoService();
 		this.categoriaService = new CategoriaService();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		log.info("Get ProductoMostrarServlet");
+		log.info("Get ProductoEditarServlet");
 		try {
 			
 			List<Categoria> categorias = categoriaService.listar();
@@ -46,9 +46,8 @@ public class ProductoMostrarServlet extends HttpServlet {
 			Producto producto = productoService.obtener(id);
 			log.info("producto ->" + producto);
 			
-			request.setAttribute("producto", producto);
 			
-			request.getRequestDispatcher("/WEB-INF/jsp/producto/mostrar.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/producto/editar.jsp").forward(request, response);
 	        
 		} catch (Exception e) {
 			log.error(e, e);
