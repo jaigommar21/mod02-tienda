@@ -18,7 +18,7 @@ import pe.edu.tecsup.tienda.services.ProductoService;
 
 @WebServlet("/ProductoMostrarServlet")
 public class ProductoMostrarServlet extends HttpServlet {
-	
+	 
 	private static final long serialVersionUID = 1L;
     
 	private static final Logger log = Logger.getLogger(ProductoMostrarServlet.class);
