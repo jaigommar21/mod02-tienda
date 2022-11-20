@@ -59,15 +59,9 @@
 	                        	</c:if>
 	                        </td>
 	                        <td class="text-right">
-<<<<<<< HEAD
-	                            <a href="<%=request.getContextPath()%>/ProductoMostrarServlet?id=<%=producto.getId() %>" class="btn btn-info btn-sm"><i class="fa fa-eye"></i> Mostrar</a>
-	                            <a href="<%=request.getContextPath()%>/ProductoEditarServlet?id=<%=producto.getId() %>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Editar</a>
-	                            <a href="<%=request.getContextPath()%>/ProductoEliminarServlet?id=<%=producto.getId() %>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Eliminar</a>
-=======
 	                            <a href="<%=request.getContextPath()%>/ProductoMostrarServlet?id=<c:out value="${producto.id}"/>" class="btn btn-info btn-sm"><i class="fa fa-eye"></i> Mostrar</a>
 	                            <a href="<%=request.getContextPath()%>/ProductoEditarServlet?id=<c:out value="${producto.id}"/>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Editar</a>
 	                            <a href="<%=request.getContextPath()%>/ProductoEliminarServlet?id=<c:out value="${producto.id}"/>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Eliminar</a>
->>>>>>> 4fcfcf7777c376b0f870feb7af86e41e1316b619
 	                        </td>
 	                    </tr>
 	                   </c:forEach>
