@@ -13,6 +13,7 @@
 	<%@include file="/WEB-INF/jsp/includes/navbar.jsp" %>
 	
 	<% 
+		@SuppressWarnings("unchecked") 
 		List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias");
 	
 		out.println(categorias);

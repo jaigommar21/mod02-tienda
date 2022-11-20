@@ -16,7 +16,10 @@
 	
 	<%@include file="/WEB-INF/jsp/includes/navbar.jsp" %>
 	
-	<% List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias"); %>
+	<% 
+		@SuppressWarnings("unchecked") 
+		List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias"); 
+	%>
 	
 	<% Producto producto = (Producto) request.getAttribute("producto"); 
 	

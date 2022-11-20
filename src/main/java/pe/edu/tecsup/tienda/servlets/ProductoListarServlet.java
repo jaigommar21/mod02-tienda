@@ -16,7 +16,7 @@ import pe.edu.tecsup.tienda.entities.Producto;
 import pe.edu.tecsup.tienda.services.ProductoService;
 
 //@WebServlet("/ProductoListarServlet")
-@WebServlet(urlPatterns={"/ProductoListarServlet","/"})
+@WebServlet(urlPatterns={"/ProductoListarServlet"})
 public class ProductoListarServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;

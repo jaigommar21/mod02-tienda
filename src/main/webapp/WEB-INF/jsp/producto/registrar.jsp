@@ -15,7 +15,10 @@
 	
 	<%@include file="/WEB-INF/jsp/includes/navbar.jsp" %>
 	
-	<% List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias"); %>
+	<% 	
+		@SuppressWarnings("unchecked") 
+		List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias"); 
+	%>
 	
 	<div class="container-fluid pt-3">
             

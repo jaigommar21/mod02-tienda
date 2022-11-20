@@ -25,7 +25,6 @@ public class CategoriaServlet extends HttpServlet {
 	private static final Logger log = Logger.getLogger(CategoriaServlet.class);
 	
 	private CategoriaService categoriaService;
-
 	
     /**
      * @see HttpServlet#HttpServlet()
@@ -39,13 +38,13 @@ public class CategoriaServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
 		log.info("Get ProductoRegistrarServlet");
 		try {
 			
 			List<Categoria> categorias = categoriaService.listar();
 			
+			log.info(categorias);
 			//request.setAttribute("categorias", categorias);
 			
 			//request.getRequestDispatcher("/WEB-INF/jsp/producto/registrar.jsp").forward(request, response);
@@ -54,8 +53,7 @@ public class CategoriaServlet extends HttpServlet {
 			log.error(e, e);
 			throw new ServletException(e.getMessage(), e);
 		}
-
-				
+			
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -63,7 +61,6 @@ public class CategoriaServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
